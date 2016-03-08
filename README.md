@@ -1,8 +1,6 @@
 Redux Easy Boilerplate
 =========================
 
-![http://anorudes.github.io/redux-easy-boilerplate/](https://raw.githubusercontent.com/anorudes/redux-easy-boilerplate/569905d1aabc33ce385b1895984141764d364b54/gh/browser.png)
-
 ## Table of Contents
 
 - [About](#about)
@@ -25,7 +23,7 @@ Redux Easy Boilerplate
 
 ## Installation
 ```
-$ git clone https://github.com/anorudes/redux-easy-boilerplate.git
+$ git clone https://github.com/btburton42/redux-easy-boilerplate.git
 $ cd redux-easy-boilerplate
 $ npm install
 ```
@@ -95,3 +93,9 @@ $ npm test
 ## TODO
 1. [ ] Write more tests!
 2. [ ] Server-side rendering
+
+## Credits
+Initial bootstrapping borrowed heavily from [Redux Easy Boilerplate](http://anorudes.github.io/redux-easy-boilerplate/)
+
+## License
+TODO: Write license
