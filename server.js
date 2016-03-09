@@ -1,5 +1,6 @@
 const http = require('http');
 const express = require('express');
+const colors = require('colors');
 const app = express();
 
 app.use(require('morgan')('short'));
@@ -28,5 +29,5 @@ const server = http.createServer(app);
 server.listen(process.env.PORT || 3000, function onListen() {
   const address = server.address();
   console.log('Listening on: %j', address);
-  console.log(' -> that probably means: http://localhost:%d', address.port);
+  console.log('-> that probably means:', `http://localhost:${address.port}`.underline.yellow);
 });

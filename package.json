@@ -1,7 +1,8 @@
 {
-  "name": "redux-easy-boilerplate",
-  "version": "2.1.0",
-  "description": "Start your project easy and fast with modern tools",
+  "name": "react-readux-easy-boilerplate",
+  "version": "0.0.1",
+  "description": "For kickstarting your next React/Redux project",
+  "main": "server.js",
   "scripts": {
     "clean": "rimraf dist",
     "build": "webpack --progress --verbose --colors --display-error-details --config webpack/common.config.js",
@@ -12,31 +13,22 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/anorudes/redux-easy-boilerplate.git"
+    "url": "https://github.com/btburton42/redux-easy-boilerplate.git"
   },
-  "homepage": "http://anorudes.github.io/redux-easy-boilerplate/",
-  "bugs": "https://github.com/anorudes/redux-easy-boilerplate/issues",
+  "homepage": "https://github.com/btburton42/redux-easy-boilerplate",
+  "bugs": "",
   "keywords": [
-    "react",
+    "UI",
+    "components",
+    "web",
+    "development",
     "reactjs",
-    "babel6",
-    "boilerplate",
     "redux",
-    "hot",
-    "reload",
-    "hmr",
-    "live",
-    "edit",
+    "babel6",
     "webpack"
   ],
+  "author": "Tyler Burton <btburton42@gmail.com>",
   "license": "MIT",
-  "authors": [
-    "Max Anoru (https://github.com/anorudes)",
-    "Andrey Keske (https://github.com/keske)"
-  ],
-  "contributors": [
-    "Ollipekka Jalonen (https://github.com/inertum)"
-  ],
   "devDependencies": {
     "autoprefixer": "6.3.1",
     "babel-core": "^6.4.5",
@@ -52,7 +44,9 @@
     "bootstrap-loader": "^1.0.5",
     "bootstrap-sass": "^3.3.6",
     "classnames": "^2.2.3",
+    "colors": "^1.1.2",
     "css-loader": "^0.23.1",
+    "debug": "^2.2.0",
     "eslint": "^1.10.3",
     "eslint-config-airbnb": "3.1.0",
     "eslint-plugin-react": "^3.15.0",
@@ -63,6 +57,7 @@
     "extract-text-webpack-plugin": "^1.0.1",
     "file-loader": "^0.8.5",
     "history": "^2.0.0-rc2",
+    "html-loader": "^0.4.3",
     "imports-loader": "^0.6.5",
     "jasmine-core": "^2.4.1",
     "karma": "^0.13.19",
@@ -71,6 +66,7 @@
     "karma-webpack": "^1.7.0",
     "less": "^2.5.3",
     "less-loader": "^2.2.2",
+    "markdown-loader": "^0.1.7",
     "mocha": "^2.3.4",
     "morgan": "^1.6.1",
     "node-sass": "^3.4.2",
@@ -100,7 +96,7 @@
     "jquery": "^2.2.0",
     "react": "^0.14.6",
     "react-redux": "^4.0.6",
-    "react-router": "^2.0.0-rc5",
+    "react-router": "~2",
     "redux": "^3.1.4"
   }
 }

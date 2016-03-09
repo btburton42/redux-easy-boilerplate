@@ -4,10 +4,12 @@ import DocumentMeta from 'react-document-meta';
 /* components */
 import { TopImage } from 'components/TopImage';
 import { Tools } from 'components/Tools';
-import { Projects } from 'components/Projects';
+import { MarkdownLoader } from 'components/MarkdownLoader';
+
+import ReadMe from '../../../README.md'
 
 const metaData = {
-  title: 'Redux Easy Boilerplate',
+  title: 'BoilerPlate Title',
   description: 'Start you project easy and fast with modern tools',
   canonical: 'http://example.com/path/to/page',
   meta: {
@@ -24,8 +26,8 @@ export class Home extends Component {
       <section>
         <DocumentMeta {...metaData} />
         <TopImage />
+        <MarkdownLoader file={ReadMe} />
         <Tools />
-        <Projects />
       </section>
     );
   }
