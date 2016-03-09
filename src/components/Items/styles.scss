@@ -1,3 +1,5 @@
+$input-checked-color: #b3b3b3
+
 :local(.styles) {
   label {
     margin: 3px 0 7px;
@@ -5,7 +7,7 @@
     span.remove {
       display: inline-block;
       position: relative;
-      
+
       top: -8px;
       margin-left: 10px;
 
@@ -15,6 +17,40 @@
       &:hover {
         color: red;
       }
+
     }
+    input:checked + span.text {
+      text-decoration: line-through;
+      color: $input-checked-color;
+    }
+  }
+  .checkbox {
+    &.example-enter {
+      opacity: 0;
+      transform:   translate(-250px,0);
+      transform: translate3d(-250px,0,0);
+    }
+    &.example-enter.example-enter-active {
+      opacity: 1;
+      transform:   translate(0,0);
+      transform: translate3d(0,0,0);
+      transition-property: transform, opacity;
+      transition-duration: 300ms;
+      transition-timing-function: cubic-bezier(0.175, 0.665, 0.320, 1), linear;
+    }
+    &.example-leave {
+      opacity: 1;
+      transform:   translate(0,0,0);
+      transform: translate3d(0,0,0);
+      transition-property: transform, opacity;
+      transition-duration: 300ms;
+      transition-timing-function: cubic-bezier(0.175, 0.665, 0.320, 1), linear;
+    }
+    &.example-leave.example-leave-active {
+      opacity: 0;
+      transform:   translate(250px,0);
+      transform: translate3d(250px,0,0);
+    }
+
   }
 }

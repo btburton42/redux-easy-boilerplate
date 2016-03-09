@@ -9,7 +9,6 @@ export class AddItem extends Component {
   static propTypes = {
     dispatch: React.PropTypes.func,
     fields: React.PropTypes.object.isRequired,
-    items: React.PropTypes.array,
     addItem: React.PropTypes.func,
   };
 

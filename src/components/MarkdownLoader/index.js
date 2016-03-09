@@ -1,14 +1,13 @@
-import React, {Component} from 'react';
+import React from 'react';
 
 import { styles } from './styles.scss';
 
-export class MarkdownLoader extends Component {
-  componentDidMount() {
-    document.getElementById('markdown').innerHTML = this.props.file;
-  }
-  render() {
-    return (
-      <section id="markdown" className={`${styles}`}></section>
-    )
-  }
-}
+const MarkdownLoader = ({ file }) => {
+  let createMarkup = (file) => {return {__html: file}}
+  return (
+  <section id="markdown" className={`${styles}`}>
+    <div dangerouslySetInnerHTML={createMarkup(file)} className={`${styles}`}/>
+  </section>
+)}
+
+export default MarkdownLoader

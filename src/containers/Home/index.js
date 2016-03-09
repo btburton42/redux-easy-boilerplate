@@ -3,8 +3,8 @@ import DocumentMeta from 'react-document-meta';
 
 /* components */
 import { TopImage } from 'components/TopImage';
-import { Tools } from 'components/Tools';
-import { MarkdownLoader } from 'components/MarkdownLoader';
+import Tools from 'components/Tools';
+import MarkdownLoader from 'components/MarkdownLoader';
 
 import ReadMe from '../../../README.md'
 
