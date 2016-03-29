@@ -1,14 +1,18 @@
 import React, { Component } from 'react';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
-
 import DocumentMeta from 'react-document-meta';
 
-import { Items } from 'components/Items';
 import { AddItem } from 'components/AddItem';
 
+import Items from 'components/Items';
+import Survey from 'components/Survey';
+
 /* actions */
-import * as actionCreators from 'actions/items';
+import * as itemActionCreators from 'actions/items';
+import * as surveyActionCreators from 'actions/survey';
+
+const assembledActionCreators = Object.assign({}, itemActionCreators, surveyActionCreators)
 
 const metaData = {
   title: 'Component List',
@@ -22,13 +26,36 @@ const metaData = {
   },
 };
 
+function mapStateToProps (state) {
+  return ({
+    items: state.items,
+    survey: state.survey
+  })
+}
+
 @connect(
-  state => state.items,
-  dispatch => bindActionCreators(actionCreators, dispatch)
+  mapStateToProps,
+  dispatch => bindActionCreators(assembledActionCreators, dispatch)
 )
 export class List extends Component {
   constructor(props) {
     super(props);
+  }
+
+  onItemDelete = (event) => {
+    event.preventDefault();
+    const index = event.currentTarget.dataset.index;
+    this.props.delItem(index);
+  }
+
+  surveySubmit = (event) => {
+    event.preventDefault();
+    const answer = event.currentTarget.dataset.value
+    this.props.surveySubmit(answer)
+  }
+
+  surveyRefresh = () => {
+    this.props.surveyRefresh()
   }
 
   render() {
@@ -50,7 +77,7 @@ export class List extends Component {
             <div className="col-xs-12 col-sm-12 col-md-6 col-lg-6
                             col-md-offset-3 col-lg-offset-3">
               <h4>Items Checklist:</h4>
-              <Items {...this.props} />
+              <Items onDelete={this.onItemDelete} {...this.props.items} />
             </div>
 
             <div className="col-xs-12 col-sm-12 col-md-6 col-lg-6
@@ -58,6 +85,13 @@ export class List extends Component {
               <h4>Add Items Box:</h4>
               <AddItem {...this.props} />
             </div>
+
+            <div className="col-xs-12 col-sm-12 col-md-6 col-lg-6
+                            col-md-offset-3 col-lg-offset-3">
+              <h4>Survey:</h4>
+              <Survey surveySubmit={this.surveySubmit} surveyRefresh={this.surveyRefresh} {...this.props.survey} />
+            </div>
+
           </div>
         </div>
       </section>

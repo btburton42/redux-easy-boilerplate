@@ -98,4 +98,4 @@ $ npm test
 Initial bootstrapping borrowed heavily from [Redux Easy Boilerplate](http://anorudes.github.io/redux-easy-boilerplate/)
 
 ## License
-TODO: Write license
+MIT ([https://opensource.org/licenses/mit-license.php](https://opensource.org/licenses/mit-license.php))
