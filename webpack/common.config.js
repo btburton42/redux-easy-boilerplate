@@ -11,7 +11,7 @@ require('babel-polyfill').default;
 const TARGET = process.env.npm_lifecycle_event;
 
 const PATHS = {
-  app: path.join(__dirname, '../src'),
+  app: path.join(__dirname, '../my-src'),
   build: path.join(__dirname, '../dist')
 };
 
